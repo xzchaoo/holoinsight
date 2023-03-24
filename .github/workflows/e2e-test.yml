@@ -127,7 +127,9 @@ jobs:
       with:
         path: artifacts
     - name: Load docker images
-      run: find artifacts/ -name "*.tar" -exec docker load -i {} \;
+      run: |
+        find artifacts/ -name "*.tar"
+        find artifacts/ -name "*.tar" -exec docker load -i {} \;
     - name: Setup environments
       run: echo "${{ matrix.it.env }}" >> $GITHUB_ENV
     - name: Run E2e Tests [${{ matrix.it.test }}] at scene [${{ matrix.it.scene }}]

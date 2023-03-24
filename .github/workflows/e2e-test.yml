@@ -145,6 +145,9 @@ jobs:
       env:
         IT_CLASS: "${{ matrix.it.test }}"
         IT_SCENE: "${{ matrix.it.scene }}"
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      if: ${{ failure() }}
 
   e2e-test-merge-gate:
     runs-on: ubuntu-latest

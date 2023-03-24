@@ -185,8 +185,10 @@ public class AlertRuleIT extends BaseIT {
         .when() //
         .post("/webapi/alarmRule/create") //
         .then() //
+        .log().all() //
         .body("success", IS_TRUE) //
         .body("data", Matchers.any(Number.class)) //
+        .log().all() //
         .extract() //
         .path("data"); //
     String uniqueId = "rule_" + ruleId;

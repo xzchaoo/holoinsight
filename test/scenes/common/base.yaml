@@ -129,6 +129,8 @@ services:
       interval: 1s
       retries: 300
       timeout: 10s
+    volumes:
+    - ../common/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
   kibana:
     image: ${kibana_image:-kibana:7.16.1}
     environment:

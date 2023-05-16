@@ -1,3 +1,3 @@
-cluster.name: "docker-cluster"
+cluster.name: "docker-cluster-test"
 network.host: 0.0.0.0
 xpack.security.enabled: false
